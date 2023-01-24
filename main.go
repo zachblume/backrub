@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -19,7 +20,6 @@ type Webpage struct {
 // Startup func
 func main() {
 	// Grab a task from the queue
-	task := getTask()
 
 	//
 }
@@ -35,19 +35,19 @@ func save() {
 }
 
 // Task worker
-func worker(taskID UUID, string, linkText string, referrer string) success {
+func worker(url string, linkText string, referrer string) bool {
 	// Establish HTTP connection and handle errors
 	resp, err := http.Get(url)
 	if err != nil {
-		log.Default(err, "connection error")
-		return
+		log.Println(err, "connection error")
+		return false
 	}
 
 	// What if we encounter a resource that is not a HTML page?
 	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
 	if !isHTML {
 		resp.Body.Close()
-		markComplete(taskID)
+		markComplete(url)
 		return false
 	}
 
@@ -57,25 +57,34 @@ func worker(taskID UUID, string, linkText string, referrer string) success {
 	// Read the response body and handle errors
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Default(err, "cannot get response body")
-		return
+		log.Println(err, "cannot get response body")
+		return false
 	}
 
+	// Grab the title and save it
+	titleRegEx, _ := regexp.Compile("<title[^>]*>(.*?)</title>")
+	pageTitle := titleRegEx.FindAllString(string(body), 1)
+
+	data := Webpage{title: pageTitle[0]}
+	fmt.Println(data)
+
 	// Parse for links
-	r, _ := regexp.Compile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
-	matches := r.FindAllString(String(body))
+	linkRegEx, _ := regexp.Compile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
+	matches := linkRegEx.FindAllString(string(body), -1)
 
 	// Loop through links and enqueue them
-	for i, match := range matches {
+	for _, match := range matches {
 		enqueue(match)
 	}
 
-	markComplete(taskID)
+	markComplete(url)
 
 	return true
 }
 
 // Put task
-func enqueue() {
+func enqueue(match string) {
 
 }
+
+func markComplete(url string) {}
