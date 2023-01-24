@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"regexp"
+	"strings"
 )
 
 // Collect this for the whole internet and you got a graph
@@ -42,7 +43,7 @@ func worker(url string, linkText string, referrer string) {
 	}
 
 	// What if we encounter a resource that is not a HTML page?
-	notHTML := false
+	notHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
 	if notHTML {
 		resp.Body.Close()
 	}
@@ -58,7 +59,7 @@ func worker(url string, linkText string, referrer string) {
 
 	// Parse for links
 	r, _ := regexp.Compile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
-	matches := r.FindAllString(body)
+	matches := r.FindAllString(String(body))
 
 	//
 }
