@@ -2,7 +2,6 @@ package main
 
 // This is the whole shebang! Collect this for the whole internet and you got a graph
 type Webpage struct {
-	id       int32
 	referrer string // The URL of the referring page, to build the graph
 	url      string
 	title    string
