@@ -35,17 +35,20 @@ func save() {
 }
 
 // Task worker
-func worker(url string, linkText string, referrer string) {
+func worker(taskID UUID, string, linkText string, referrer string) success {
 	// Establish HTTP connection and handle errors
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Default(err, "connection error")
+		return
 	}
 
 	// What if we encounter a resource that is not a HTML page?
 	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
 	if !isHTML {
 		resp.Body.Close()
+		markComplete(taskID)
+		return false
 	}
 
 	// Close connection at end of function scope
@@ -55,13 +58,21 @@ func worker(url string, linkText string, referrer string) {
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Default(err, "cannot get response body")
+		return
 	}
 
 	// Parse for links
 	r, _ := regexp.Compile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
 	matches := r.FindAllString(String(body))
 
-	//
+	// Loop through links and enqueue them
+	for i, match := range matches {
+		enqueue(match)
+	}
+
+	markComplete(taskID)
+
+	return true
 }
 
 // Put task
