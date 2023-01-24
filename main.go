@@ -8,6 +8,31 @@ import (
 	"strings"
 )
 
+// Initialize database connection
+max_conns := 25
+conns := make(chan *sqlite3.Stmt, max_conns)
+
+for i := 0; i < max_conns; i++ {
+  conn, err := sqlite3.Open("file:db.sqlite3?cache=shared&mode=rw")
+  check(err)
+  stmt, err := conn.Prepare("INSERT INTO webpages (columns) VALUES (values)")
+  check(err)
+
+  defer func() {
+    stmt.Close()
+    conn.Close()
+  }()
+  conns <- stmt
+}
+
+checkout := func() *sqlite3.Stmt {
+  return <-conns
+}
+
+checkin := func(c *sqlite3.Stmt) {
+  conns <- c
+}
+
 // Collect this for the whole internet and you got a graph
 type Webpage struct {
 	referrer string // The URL of the referring page, to build the graph
@@ -93,4 +118,17 @@ func enqueue(match string) {
 
 func markComplete(url string) {}
 
-func saveToDB() {}
+func saveToDB(inspectedWebpage Webpage) {
+	stmt := checkout()
+  defer checkin(stmt)
+  err := stmt.Bind(1)
+  _, err = stmt.Step()
+  check(err)
+  var body []byte
+  err = stmt.Scan(&body)
+  check(err)
+  err = stmt.Reset()
+  check(err)
+  
+	return true
+}
