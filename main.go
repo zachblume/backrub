@@ -43,8 +43,8 @@ func worker(url string, linkText string, referrer string) {
 	}
 
 	// What if we encounter a resource that is not a HTML page?
-	notHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
-	if notHTML {
+	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
+	if !isHTML {
 		resp.Body.Close()
 	}
 
