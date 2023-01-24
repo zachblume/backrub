@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -20,7 +19,7 @@ type Webpage struct {
 // Startup func
 func main() {
 	// Grab a task from the queue
-
+	worker("https://google.com", "Google", "https://www.refer.com")
 	//
 }
 
@@ -62,14 +61,19 @@ func worker(url string, linkText string, referrer string) bool {
 	}
 
 	// Grab the title and save it
-	titleRegEx, _ := regexp.Compile("<title[^>]*>(.*?)</title>")
-	pageTitle := titleRegEx.FindAllString(string(body), 1)
+	titleRegEx := regexp.MustCompile("<title[^>]*>(.*?)</title>")
+	pageTitle := titleRegEx.FindAllStringSubmatch(string(body), 1)[0][1]
 
-	data := Webpage{title: pageTitle[0]}
-	fmt.Println(data)
+	inspectedWebpage := Webpage{
+		url:      url,
+		title:    pageTitle,
+		linkText: linkText,
+		referrer: referrer,
+	}
+	saveToDB(inspectedWebpage)
 
 	// Parse for links
-	linkRegEx, _ := regexp.Compile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
+	linkRegEx := regexp.MustCompile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
 	matches := linkRegEx.FindAllString(string(body), -1)
 
 	// Loop through links and enqueue them
@@ -88,3 +92,5 @@ func enqueue(match string) {
 }
 
 func markComplete(url string) {}
+
+func saveToDB() {}
