@@ -11,10 +11,10 @@ import (
 
 // Data model
 type Webpage struct {
-	url      string
-	title    string
-	linkText string
-    outGoingLinks []string
+	url   string
+	title string
+
+	outGoingLinks []string
 }
 
 // Startup func
@@ -26,8 +26,14 @@ func main() {
 }
 
 // Task worker
-func worker(url string, linkText string, referrer string) bool {
-	// Establish HTTP connection and handle errors
+func worker(url string) bool {
+	// First, check to see if we've already visited this URL, and stop if we have?
+	if haveWeAlreadyVisited(url)
+    {
+        return
+    }
+    
+    // Establish HTTP connection and handle errors
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Println(err, "connection error")
@@ -42,7 +48,7 @@ func worker(url string, linkText string, referrer string) bool {
 		return false
 	}
 
-	// Close connection at end of function scope
+	// Defer closing connection to end of function scope
 	defer resp.Body.Close()
 
 	// Read the response body and handle errors
@@ -53,29 +59,23 @@ func worker(url string, linkText string, referrer string) bool {
 	}
 
 	// Parse HTML for links, so we can follow them
-	linkRegEx := regexp.MustCompile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>([^<]*)</a>")
+	linkRegEx := regexp.MustCompile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>[^<]*</a>")
 	matches := linkRegEx.FindAllStringSubmatch(string(body), -1)
 
-	// Loop through links and enqueue them
+	// Loop through links and queue them to channel
 	for _, match := range matches {
-		// Prepare a task object and enqueue it
-		enqueue(Webpage{
-			url: match[1],
-			// title:    NULL,
-			linkText: match[2],
-			referrer: url,
-		})
+		queue <- url
 	}
 
-    // Parse HTML for the page title and save it
+	// Parse HTML for the page title and save it
 	titleRegEx := regexp.MustCompile("<title[^>]*>(.*?)</title>")
 	pageTitle := titleRegEx.FindAllStringSubmatch(string(body), 1)[0][1]
 
 	// Now that we have the page title, complete the database record and save it
 	inspectedWebpage := Webpage{
-		url:      url,
-		title:    pageTitle,
-		linkText: linkText,
+		url:           url,
+		title:         pageTitle,
+		linkText:      linkText,
 		outGoingLinks: outGoingLinks,
 	}
 	saveToDB(inspectedWebpage)
@@ -84,21 +84,6 @@ func worker(url string, linkText string, referrer string) bool {
 	markComplete(url)
 
 	return true
-}
-
-// Put task to queue
-func enqueue(link Webpage) {
-	// Debugging
-    fmt.Printf("%+v", link)
-	
-    // First, check to see if we've already visited this URL, and stop if we have?
-	if haveWeVisited(link.url) 
-    {
-        return
-    }
-
-    // OK, it's new. So let's add it to the queue
-    queue <- link
 }
 
 // Make sure we don't revisit URLs
