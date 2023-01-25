@@ -132,3 +132,4 @@ func saveToDB(inspectedWebpage Webpage) {
   
 	return true
 }
+// db notes - take a look at this later: https://turriate.com/articles/making-sqlite-faster-in-go
