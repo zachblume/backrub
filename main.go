@@ -5,7 +5,9 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 	"regexp"
+	"runtime"
 	"strings"
 )
 
@@ -17,23 +19,32 @@ type Webpage struct {
 	outGoingLinks []string
 }
 
+var queue = make(chan string, 100)
+
 // Startup func
 func main() {
-	// Grab a task from the queue
-	// ...
 	// For now, just seed the process
-	worker("https://google.com", "Google", "https://www.refer.com")
+	queue <- "https://en.wikipedia.org/wiki/Bill_Clinton"
+
+	// Start a first worker
+	go worker()
+}
+
+func haveWeAlreadyVisited(url string) bool {
+	return false
 }
 
 // Task worker
-func worker(url string) bool {
+func worker() bool {
+	// Grab a URL from queue
+	url := <-queue
+
 	// First, check to see if we've already visited this URL, and stop if we have?
-	if haveWeAlreadyVisited(url)
-    {
-        return
-    }
-    
-    // Establish HTTP connection and handle errors
+	if haveWeAlreadyVisited(url) {
+		return true
+	}
+
+	// Establish HTTP connection and handle errors
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Println(err, "connection error")
@@ -62,9 +73,22 @@ func worker(url string) bool {
 	linkRegEx := regexp.MustCompile("<a[^>]+?href=\"([^\"]+?)\"[^>]*>[^<]*</a>")
 	matches := linkRegEx.FindAllStringSubmatch(string(body), -1)
 
+	outGoingLinks := []string{}
+
 	// Loop through links and queue them to channel
 	for _, match := range matches {
-		queue <- url
+		outGoingLinkURL := match[1]
+
+		// Add link to simplified array
+		outGoingLinks = append(outGoingLinks, outGoingLinkURL)
+
+		// Add outgoing link to queue
+		queue <- outGoingLinkURL
+
+		// If there are less workers than URLs in the queue, start a worker (the queue is limited to 100)
+		if runtime.NumGoroutine() < len(queue) {
+			go worker()
+		}
 	}
 
 	// Parse HTML for the page title and save it
@@ -75,7 +99,6 @@ func worker(url string) bool {
 	inspectedWebpage := Webpage{
 		url:           url,
 		title:         pageTitle,
-		linkText:      linkText,
 		outGoingLinks: outGoingLinks,
 	}
 	saveToDB(inspectedWebpage)
@@ -92,6 +115,11 @@ func markComplete(url string) {}
 // Save completed URLs to database
 func saveToDB(inspectedWebpage Webpage) {
 	fmt.Printf("%+v", inspectedWebpage)
+	d1 := []byte(`{"newline":1}`)
+	err := os.WriteFile("output.txt", d1, 0644)
+	if err != nil {
+		panic("cannot save to file")
+	}
 }
 
 // db notes - take a look at this later: https://turriate.com/articles/making-sqlite-faster-in-go
