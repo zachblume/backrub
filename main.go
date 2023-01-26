@@ -21,7 +21,7 @@ var limiterChannel = make(chan struct{}, MAX_WORKERS)
 var queue = make(chan string)
 var wg sync.WaitGroup
 var completedURLmap = make(map[string]bool)
-var mutex = &sync.Mutex{} // This is a locking mechanism to prevent synchronous map read/write
+var mutex = &sync.Mutex{} // This is a locking mechanism to prevent simultaneous map read/write
 
 // Data model
 type webpage struct {
@@ -39,7 +39,7 @@ func main() {
 	go worker() // Start worker
 
 	// For now, just seed the process
-	queue <- "https://www.wikipedia.org"
+	queue <- "https://www.akc.org/dog-breeds/"
 	limiterChannel <- struct{}{}
 
 	wg.Wait()
@@ -52,14 +52,11 @@ func haveWeAlreadyVisited(url string) bool {
 	// But first let's do the simple version
 
 	mutex.Lock()
+	defer mutex.Unlock()
 	_, visitedBefore := completedURLmap[url]
 	if !visitedBefore {
 		completedURLmap[url] = true
 	}
-	mutex.Unlock()
-
-	log.Println(len(completedURLmap))
-	log.Println(visitedBefore)
 
 	return visitedBefore
 }
@@ -99,6 +96,8 @@ func isValidURL(URLtoValidate string) bool {
 func worker() {
 	// Debugging
 	fmt.Println("worker started")
+	fmt.Println(len(completedURLmap))
+	fmt.Println(len(queue))
 
 	// // Decrement the wait group by 1
 	// defer wg.Done()
