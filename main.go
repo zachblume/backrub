@@ -25,14 +25,16 @@ type webpage struct {
 
 // Startup func
 func main() {
-	// For now, just seed the process
-	queue <- "https://en.wikipedia.org/wiki/Bill_Clinton"
+	fmt.Println("main() started")
 
 	// Start 100 workers, each of which will wait for channel item
 	for i := 0; i < 100; i++ {
 		wg.Add(1)   // Increment wait group
 		go worker() // Start worker
 	}
+
+	// For now, just seed the process
+	queue <- "https://en.wikipedia.org/wiki/Bill_Clinton"
 
 	wg.Wait()
 }
@@ -62,11 +64,17 @@ func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
 
 // Task worker
 func worker() bool {
-	// All things come to an end...
+	// Debugging
+	fmt.Println("worker started")
+
+	// Decrement the wait group by 1
 	defer wg.Done()
 
 	// Grab a URL from queue
 	url := <-queue
+
+	// Debug
+	fmt.Println(url)
 
 	// First, check to see if we've already visited this URL, and stop if we have?
 	if haveWeAlreadyVisited(url) {
