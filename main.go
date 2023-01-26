@@ -13,9 +13,15 @@ import (
 	"sync"
 )
 
+// Global constants
+const MAX_WORKERS = 100
+
 // Global vars
+var limiterChannel = make(chan struct{}, MAX_WORKERS)
 var queue = make(chan string)
 var wg sync.WaitGroup
+var completedURLmap = make(map[string]bool)
+var mutex = &sync.Mutex{} // This is a locking mechanism to prevent synchronous map read/write
 
 // Data model
 type webpage struct {
@@ -33,7 +39,8 @@ func main() {
 	go worker() // Start worker
 
 	// For now, just seed the process
-	queue <- "https://www.google.com"
+	queue <- "https://www.wikipedia.org"
+	limiterChannel <- struct{}{}
 
 	wg.Wait()
 }
@@ -42,8 +49,24 @@ func haveWeAlreadyVisited(url string) bool {
 	// If we use a map where each URL is 50 bytes, than we will run out of memory at ~50 million websites
 	// So instead we need a external sort by chunking
 	// Lets chunk by 1 million lines (~50MB)
+	// But first let's do the simple version
 
-	return false
+	mutex.Lock()
+	_, visitedBefore := completedURLmap[url]
+	if !visitedBefore {
+		completedURLmap[url] = true
+	}
+	mutex.Unlock()
+
+	log.Println(len(completedURLmap))
+	log.Println(visitedBefore)
+
+	return visitedBefore
+}
+
+// Make sure we don't revisit URLs
+func markComplete(URL string) {
+	appendNewLineToFile("visited.log", URL)
 }
 
 // Parse relative to absolute URLs!
@@ -63,10 +86,19 @@ func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
 	return base.ResolveReference(parsedURL).String()
 }
 
+func isValidURL(URLtoValidate string) bool {
+	// See if the URL will parse
+	_, err := url.ParseRequestURI(URLtoValidate)
+
+	// If there is no error in parsing, and the URL begins with http...
+	// then true, otherwise false (using && and operator)
+	return err == nil && URLtoValidate[:4] == "http"
+}
+
 // Task worker
 func worker() {
 	// Debugging
-	// fmt.Println("worker started")
+	fmt.Println("worker started")
 
 	// // Decrement the wait group by 1
 	// defer wg.Done()
@@ -77,7 +109,12 @@ func worker() {
 	// Debug
 	// fmt.Println(url)
 
-	// First, check to see if we've already visited this URL, and stop if we have?
+	// First, check to see if the URL is valid
+	if !isValidURL(url) {
+		return
+	}
+
+	// Second, check to see if we've already visited this URL, and stop if we have?
 	if haveWeAlreadyVisited(url) {
 		return
 	}
@@ -145,7 +182,13 @@ func worker() {
 	// Don't visit this URL again by accident
 	markComplete(url)
 
+	// Allow one more thread
+	<-limiterChannel
+
 	for _, outGoingLinkURL := range outGoingLinks {
+		// Wait if there are more than 100 ongoing threads
+		limiterChannel <- struct{}{}
+
 		// Start additional worker
 		wg.Add(1)   // Increment wait group
 		go worker() // Start worker
@@ -155,27 +198,14 @@ func worker() {
 	}
 }
 
-// Make sure we don't revisit URLs
-func markComplete(url string) {}
-
 // Save completed URLs to database
 func saveToDB(inspectedWebpage webpage) {
-	f, err := os.OpenFile("db.json",
-		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Println(err)
-	}
-	defer f.Close()
-
-	toLog, err := json.Marshal(inspectedWebpage)
+	webpageInJSON, err := json.Marshal(inspectedWebpage)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-
-	if _, err := f.WriteString(string(toLog) + "\n"); err != nil {
-		log.Println(err)
-	}
+	appendNewLineToFile("db.json", string(webpageInJSON))
 }
 
 // Iterate through DB and calculate pageRank
@@ -189,3 +219,16 @@ func buildTitleIndex() {
 }
 
 // db access to similar speed as fs notes - take a look at this later: https://turriate.com/articles/making-sqlite-faster-in-go
+
+func appendNewLineToFile(filePath string, toWrite string) {
+	f, err := os.OpenFile(filePath,
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Println(err)
+	}
+	defer f.Close()
+
+	if _, err := f.WriteString(toWrite + "\n"); err != nil {
+		log.Println(err)
+	}
+}
