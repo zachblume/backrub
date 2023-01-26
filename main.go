@@ -8,9 +8,13 @@ import (
 	"net/url"
 	"os"
 	"regexp"
-	"runtime"
 	"strings"
+	"sync"
 )
+
+// Global vars
+var queue = make(chan string)
+var wg sync.WaitGroup
 
 // Data model
 type Webpage struct {
@@ -19,18 +23,25 @@ type Webpage struct {
 	outGoingLinks []string
 }
 
-var queue = make(chan string, 100)
-
 // Startup func
 func main() {
 	// For now, just seed the process
 	queue <- "https://en.wikipedia.org/wiki/Bill_Clinton"
 
-	// Start a first worker
-	go worker()
+	// Start 100 workers, each of which will wait for channel item
+	for i := 0; i < 100; i++ {
+		wg.Add(1)   // Increment wait group
+		go worker() // Start worker
+	}
+
+	wg.Wait()
 }
 
 func haveWeAlreadyVisited(url string) bool {
+	// If we use a map where each URL is 50 bytes, than we will run out of memory at ~50 million websites
+	// So instead we need a external sort by chunking
+	// Lets chunk by 1 million lines (~50MB)
+
 	return false
 }
 
@@ -40,17 +51,20 @@ func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
-    base, err := url.Parse(baseURL)
+
+	base, err := url.Parse(baseURL)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	retrun base.ResolveReference(parsedURL)
+	return base.ResolveReference(parsedURL).String()
 }
 
 // Task worker
 func worker() bool {
+	// All things come to an end...
+	defer wg.Done()
+
 	// Grab a URL from queue
 	url := <-queue
 
@@ -100,11 +114,6 @@ func worker() bool {
 
 		// Add outgoing link to queue
 		queue <- outGoingLinkURL
-
-		// If there are less workers than URLs in the queue, start a worker (the queue is limited to 100)
-		if runtime.NumGoroutine() < len(queue) {
-			go worker()
-		}
 	}
 
 	// Parse HTML for the page title and save it
@@ -138,4 +147,14 @@ func saveToDB(inspectedWebpage Webpage) {
 	}
 }
 
-// db notes - take a look at this later: https://turriate.com/articles/making-sqlite-faster-in-go
+// Iterate through DB and calculate pageRank
+func pageRank() {
+
+}
+
+// Iterate through DB and build a hash of words and their positions
+func buildTitleIndex() {
+
+}
+
+// db access to similar speed as fs notes - take a look at this later: https://turriate.com/articles/making-sqlite-faster-in-go
