@@ -17,7 +17,7 @@ var queue = make(chan string)
 var wg sync.WaitGroup
 
 // Data model
-type Webpage struct {
+type webpage struct {
 	url           string
 	title         string
 	outGoingLinks []string
@@ -121,7 +121,7 @@ func worker() bool {
 	pageTitle := titleRegEx.FindAllStringSubmatch(string(body), 1)[0][1]
 
 	// Now that we have the page title, complete the database record and save it
-	inspectedWebpage := Webpage{
+	inspectedWebpage := webpage{
 		url:           url,
 		title:         pageTitle,
 		outGoingLinks: outGoingLinks,
@@ -138,7 +138,7 @@ func worker() bool {
 func markComplete(url string) {}
 
 // Save completed URLs to database
-func saveToDB(inspectedWebpage Webpage) {
+func saveToDB(inspectedWebpage webpage) {
 	fmt.Printf("%+v", inspectedWebpage)
 	d1 := []byte(`{"newline":1}`)
 	err := os.WriteFile("output.txt", d1, 0644)
