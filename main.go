@@ -5,6 +5,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"regexp"
 	"runtime"
@@ -13,9 +14,8 @@ import (
 
 // Data model
 type Webpage struct {
-	url   string
-	title string
-
+	url           string
+	title         string
 	outGoingLinks []string
 }
 
@@ -32,6 +32,21 @@ func main() {
 
 func haveWeAlreadyVisited(url string) bool {
 	return false
+}
+
+// Parse relative to absolute URLs!
+func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
+	parsedURL, err := url.Parse(URLtoResolve)
+	if err != nil {
+		log.Fatal(err)
+	}
+	
+    base, err := url.Parse(baseURL)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	retrun base.ResolveReference(parsedURL)
 }
 
 // Task worker
@@ -77,7 +92,8 @@ func worker() bool {
 
 	// Loop through links and queue them to channel
 	for _, match := range matches {
-		outGoingLinkURL := match[1]
+		// Resolve relative links to absolute link, using (current) url as base
+		outGoingLinkURL := parseToAbsoluteURL(match[1], url)
 
 		// Add link to simplified array
 		outGoingLinks = append(outGoingLinks, outGoingLinkURL)
