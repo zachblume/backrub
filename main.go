@@ -73,6 +73,8 @@ func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
 		log.Println(err)
 		return ""
 	}
+	parsedURL.RawQuery = ""
+	parsedURL.Fragment = ""
 
 	base, err := url.Parse(baseURL)
 	if err != nil {
@@ -173,7 +175,7 @@ func worker() {
 	titleRegEx := regexp.MustCompile("<title[^>]*>(.*?)</title>")
 	pageTitleMatches := titleRegEx.FindAllStringSubmatch(string(body), 1)
 	pageTitle := ""
-	if len(pageTitle) > 0 {
+	if len(pageTitleMatches) > 0 {
 		pageTitle = pageTitleMatches[0][1]
 	}
 
