@@ -92,15 +92,23 @@ func isValidURL(URLtoValidate string) bool {
 	return err == nil && URLtoValidate[:4] == "http"
 }
 
+func allowOneMoreThread() interface{} {
+	return <-limiterChannel
+}
+
 // Task worker
 func worker() {
 	// Debugging
 	fmt.Println("worker started")
-	fmt.Println(len(completedURLmap))
-	fmt.Println(len(queue))
 
 	// // Decrement the wait group by 1
 	// defer wg.Done()
+
+	// Debugging
+	log.Println(len(completedURLmap))
+
+	// Allow one more thread
+	defer allowOneMoreThread()
 
 	// Grab a URL from queue
 	url := <-queue
@@ -154,12 +162,11 @@ func worker() {
 		// Resolve relative links to absolute link, using (current) url as base
 		outGoingLinkURL := parseToAbsoluteURL(match[1], url)
 
-		if outGoingLinkURL == "" {
-			continue
+		// If it's valid...
+		if outGoingLinkURL != "" {
+			// Add link to simplified array
+			outGoingLinks = append(outGoingLinks, outGoingLinkURL)
 		}
-
-		// Add link to simplified array
-		outGoingLinks = append(outGoingLinks, outGoingLinkURL)
 	}
 
 	// Parse HTML for the page title and save it
@@ -181,8 +188,7 @@ func worker() {
 	// Don't visit this URL again by accident
 	markComplete(url)
 
-	// Allow one more thread
-	<-limiterChannel
+	allowOneMoreThread()
 
 	for _, outGoingLinkURL := range outGoingLinks {
 		// Wait if there are more than 100 ongoing threads
