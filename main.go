@@ -9,6 +9,8 @@ import (
 	"net/url"
 	"os"
 	"regexp"
+	"runtime"
+	"strconv"
 	"strings"
 	"sync"
 )
@@ -107,7 +109,7 @@ func worker() {
 	// defer wg.Done()
 
 	// Debugging
-	log.Println(len(completedURLmap))
+	log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()))
 
 	// Allow one more thread
 	defer allowOneMoreThread()
