@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net/http"
 	"net/url"
 	"os"
@@ -125,7 +126,9 @@ func process(url string) {
 	// fmt.Println("worker started")
 
 	// Debugging
-	log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()))
+	if rand.Intn(100) == 1 {
+		log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()))
+	}
 
 	// Debug
 	// fmt.Println(url)
