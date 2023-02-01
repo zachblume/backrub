@@ -16,10 +16,9 @@ import (
 )
 
 // Global constants
-const MAX_WORKERS = 100
+const MAX_WORKERS = 1000
 
 // Global vars
-var limiterChannel = make(chan struct{}, MAX_WORKERS)
 var queue = make(chan string)
 var wg sync.WaitGroup
 var completedURLmap = make(map[string]bool)
@@ -34,19 +33,26 @@ type webpage struct {
 
 // Startup func
 func main() {
+	os.Remove("db.json")
+	os.Remove("visited.log")
+
 	fmt.Println("main() started")
 
-	// Start a single worker that will fan out
-	wg.Add(1)   // Increment wait group
-	go worker() // Start worker
+	// Start MAX_WORKERS workers (100 by default)
+	wg.Add(MAX_WORKERS)
+	for i := 0; i < MAX_WORKERS; i++ {
+		go worker()
+	}
 
 	// For now, just seed the process
-	queue <- "https://www.akc.org/dog-breeds/"
-	limiterChannel <- struct{}{}
+	queue <- "https://news.ycombinator.com/show"
 
 	wg.Wait()
+
+	fmt.Println("main() done")
 }
 
+// Safely check a map for previous visits
 func haveWeAlreadyVisited(url string) bool {
 	// If we use a map where each URL is 50 bytes, than we will run out of memory at ~50 million websites
 	// So instead we need a external sort by chunking
@@ -96,26 +102,30 @@ func isValidURL(URLtoValidate string) bool {
 	return err == nil && URLtoValidate[:4] == "http"
 }
 
-func allowOneMoreThread() interface{} {
-	return <-limiterChannel
+// var workerIDs int
+
+// Queue workers
+func worker() {
+	// workerIDs++
+	// workerID := workerIDs
+	// Continuously grab a URL from queue
+	defer wg.Done()
+	// fmt.Print("worker()")
+	for url := range queue {
+		// fmt.Print("FOR-WORKER-NUM-")
+		// fmt.Print(workerID)
+		// fmt.Print("-")
+		process(url)
+	}
 }
 
-// Task worker
-func worker() {
+// Task processor
+func process(url string) {
 	// Debugging
-	fmt.Println("worker started")
-
-	// // Decrement the wait group by 1
-	// defer wg.Done()
+	// fmt.Println("worker started")
 
 	// Debugging
 	log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()))
-
-	// Allow one more thread
-	defer allowOneMoreThread()
-
-	// Grab a URL from queue
-	url := <-queue
 
 	// Debug
 	// fmt.Println(url)
@@ -137,16 +147,15 @@ func worker() {
 		return
 	}
 
+	// Defer closing connection to end of function scope
+	defer resp.Body.Close()
+
 	// What if we encounter a resource that is not a HTML page?
 	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
 	if !isHTML {
-		resp.Body.Close()
 		markComplete(url)
 		return
 	}
-
-	// Defer closing connection to end of function scope
-	defer resp.Body.Close()
 
 	// Read the response body and handle errors
 	body, err := io.ReadAll(resp.Body)
@@ -192,18 +201,13 @@ func worker() {
 	// Don't visit this URL again by accident
 	markComplete(url)
 
-	allowOneMoreThread()
-
 	for _, outGoingLinkURL := range outGoingLinks {
-		// Wait if there are more than 100 ongoing threads
-		limiterChannel <- struct{}{}
-
-		// Start additional worker
-		wg.Add(1)   // Increment wait group
-		go worker() // Start worker
-
+		// fmt.Print("out")
 		// Add outgoing link to queue
-		queue <- outGoingLinkURL
+		go func() {
+			queue <- outGoingLinkURL
+		}()
+
 	}
 }
 
