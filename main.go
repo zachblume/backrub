@@ -1,9 +1,11 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
@@ -14,13 +16,15 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 )
 
 // Global constants
-const MAX_WORKERS = 1000
+const MAX_WORKERS = 250
 
 // Global vars
-var queue = make(chan string)
+var depthQueue = make(chan string)
+var breadthQueue = make(chan string)
 var wg sync.WaitGroup
 var completedURLmap = make(map[string]bool)
 var mutex = &sync.Mutex{} // This is a locking mechanism to prevent simultaneous map read/write
@@ -34,6 +38,9 @@ type webpage struct {
 
 // Startup func
 func main() {
+	// f, _ := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	// log.SetOutput(f)
+
 	os.Remove("db.json")
 	os.Remove("visited.log")
 
@@ -41,14 +48,16 @@ func main() {
 
 	// Start MAX_WORKERS workers (100 by default)
 	wg.Add(MAX_WORKERS)
-	for i := 0; i < MAX_WORKERS; i++ {
+	for i := 0; i < MAX_WORKERS-1; i++ {
 		go worker()
 	}
 
 	// For now, just seed the process
-	queue <- "https://news.ycombinator.com/show"
+	breadthQueue <- "https://www.wikipedia.org"
 
 	wg.Wait()
+	close(breadthQueue)
+	close(depthQueue)
 
 	fmt.Println("main() done")
 }
@@ -94,6 +103,16 @@ func parseToAbsoluteURL(URLtoResolve string, baseURL string) string {
 	return base.ResolveReference(parsedURL).String()
 }
 
+// Parse domain from URL
+func getHost(URLtoResolve string) string {
+	parsedURL, err := url.Parse(URLtoResolve)
+	if err != nil {
+		log.Println(err)
+		return ""
+	}
+	return parsedURL.Host
+}
+
 func isValidURL(URLtoValidate string) bool {
 	// See if the URL will parse
 	_, err := url.ParseRequestURI(URLtoValidate)
@@ -109,15 +128,28 @@ func isValidURL(URLtoValidate string) bool {
 func worker() {
 	// workerIDs++
 	// workerID := workerIDs
+
 	// Continuously grab a URL from queue
 	defer wg.Done()
+
 	// fmt.Print("worker()")
-	for url := range queue {
+
+	for {
 		// fmt.Print("FOR-WORKER-NUM-")
 		// fmt.Print(workerID)
 		// fmt.Print("-")
-		process(url)
+
+		select {
+		case url1 := <-breadthQueue:
+			process(url1)
+		case url2 := <-depthQueue:
+			process(url2)
+		default:
+			break
+		}
+
 	}
+
 }
 
 // Task processor
@@ -126,8 +158,10 @@ func process(url string) {
 	// fmt.Println("worker started")
 
 	// Debugging
-	if rand.Intn(100) == 1 {
-		log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()))
+	if rand.Intn(25) == 1 {
+		log.Println("Completed URLS: " + strconv.Itoa(len(completedURLmap)) + " | Goroutines: " + strconv.Itoa(runtime.NumGoroutine()) + "| stacklen" + strconv.Itoa(len(breadthQueue)+len(depthQueue)))
+		// pprof.Lookup("goroutine").WriteTo(os.Stdout, 1)
+
 	}
 
 	// Debug
@@ -143,27 +177,10 @@ func process(url string) {
 		return
 	}
 
-	// Establish HTTP connection and handle errors
-	resp, err := http.Get(url)
+	// Safely establish HTTP connection without keepalive, and handle errors
+	body, err := fetchWithoutKeepAlive(url)
 	if err != nil {
-		log.Println(err, "connection error")
-		return
-	}
-
-	// Defer closing connection to end of function scope
-	defer resp.Body.Close()
-
-	// What if we encounter a resource that is not a HTML page?
-	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
-	if !isHTML {
-		markComplete(url)
-		return
-	}
-
-	// Read the response body and handle errors
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		log.Println(err, "cannot get response body")
+		log.Println(err, "HTTP error, cannot make response and get body "+url)
 		return
 	}
 
@@ -204,12 +221,19 @@ func process(url string) {
 	// Don't visit this URL again by accident
 	markComplete(url)
 
+	// Add each outgoing link to the correct breadth or depth queue
 	for _, outGoingLinkURL := range outGoingLinks {
 		// fmt.Print("out")
-		// Add outgoing link to queue
-		go func() {
-			queue <- outGoingLinkURL
-		}()
+
+		wg.Add(1)
+		go func(outGoingLinkURL string) {
+			defer wg.Done()
+			if getHost(outGoingLinkURL) == getHost(url) {
+				depthQueue <- outGoingLinkURL
+			} else {
+				breadthQueue <- outGoingLinkURL
+			}
+		}(outGoingLinkURL)
 
 	}
 }
@@ -222,11 +246,6 @@ func saveToDB(inspectedWebpage webpage) {
 		return
 	}
 	appendNewLineToFile("db.json", string(webpageInJSON))
-}
-
-// Iterate through DB and calculate pageRank
-func pageRank() {
-
 }
 
 // Iterate through DB and build a hash of words and their positions
@@ -247,4 +266,32 @@ func appendNewLineToFile(filePath string, toWrite string) {
 	if _, err := f.WriteString(toWrite + "\n"); err != nil {
 		log.Println(err)
 	}
+}
+
+func fetchWithoutKeepAlive(URLToRequest string) ([]byte, error) {
+	ctx, cancel := context.WithTimeout(context.TODO(), 1*time.Second)
+	defer cancel()
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, URLToRequest, nil)
+	if err != nil {
+		// handle error
+		return []byte{}, err
+	}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		// handle error
+		return []byte{}, err
+	}
+	defer resp.Body.Close()
+
+	// What if we encounter a resource that is not a HTML page?
+	isHTML := strings.Contains(resp.Header.Get("Content-Type"), "text/html")
+	if !isHTML {
+		markComplete(URLToRequest)
+		err := errors.New("not HTML")
+		return []byte{}, err
+	}
+
+	body, err := ioutil.ReadAll(resp.Body)
+
+	return body, err
 }

@@ -1,0 +1,744 @@
+main() started
+2023/02/02 17:01:56 Goroutines: 251
+2023/02/02 17:02:16 Goroutines: 250
+2023/02/02 17:06:46 Goroutines: 250
+2023/02/02 17:07:40 Goroutines: 250
+2023/02/02 17:07:48 Goroutines: 250
+2023/02/02 17:08:48 Goroutines: 250
+2023/02/02 17:08:56 Goroutines: 250
+2023/02/02 17:10:22 Goroutines: 250
+2023/02/02 17:10:47 Goroutines: 250
+2023/02/02 17:31:50 Completed URLS: 29 | Goroutines: 440
+2023/02/02 17:31:50 Completed URLS: 38 | Goroutines: 452
+2023/02/02 17:31:50 Completed URLS: 38 | Goroutines: 451
+2023/02/02 17:31:50 Completed URLS: 38 | Goroutines: 449
+2023/02/02 17:31:50 Completed URLS: 38 | Goroutines: 448
+2023/02/02 17:32:32 Completed URLS: 14 | Goroutines: 401
+2023/02/02 17:32:32 Completed URLS: 25 | Goroutines: 419
+2023/02/02 17:32:32 Completed URLS: 30 | Goroutines: 430
+2023/02/02 17:32:32 Completed URLS: 36 | Goroutines: 438
+2023/02/02 17:32:32 Completed URLS: 36 | Goroutines: 438
+2023/02/02 17:32:37 Completed URLS: 45 | Goroutines: 500
+2023/02/02 17:32:37 Completed URLS: 65 | Goroutines: 545
+2023/02/02 17:32:37 Completed URLS: 71 | Goroutines: 559
+2023/02/02 17:32:37 Completed URLS: 46 | Goroutines: 500
+2023/02/02 17:32:37 Completed URLS: 45 | Goroutines: 500
+2023/02/02 17:32:37 Completed URLS: 47 | Goroutines: 497
+2023/02/02 17:32:38 Completed URLS: 91 | Goroutines: 666
+2023/02/02 17:32:38 Completed URLS: 104 | Goroutines: 674
+2023/02/02 17:32:38 Completed URLS: 150 | Goroutines: 673
+2023/02/02 17:32:38 Completed URLS: 91 | Goroutines: 664
+2023/02/02 17:32:38 Completed URLS: 173 | Goroutines: 624
+2023/02/02 17:32:38 Completed URLS: 174 | Goroutines: 625
+2023/02/02 17:32:38 Completed URLS: 191 | Goroutines: 630
+2023/02/02 17:32:38 Completed URLS: 195 | Goroutines: 618
+2023/02/02 17:32:38 Completed URLS: 195 | Goroutines: 616
+2023/02/02 17:32:38 Completed URLS: 195 | Goroutines: 617
+2023/02/02 17:32:38 Completed URLS: 195 | Goroutines: 616
+2023/02/02 17:32:38 Completed URLS: 175 | Goroutines: 626
+2023/02/02 17:32:38 Completed URLS: 215 | Goroutines: 591
+2023/02/02 17:32:38 Completed URLS: 222 | Goroutines: 600
+2023/02/02 17:32:38 Completed URLS: 229 | Goroutines: 582
+2023/02/02 17:32:38 Completed URLS: 229 | Goroutines: 582
+2023/02/02 17:32:38 Completed URLS: 233 | Goroutines: 579
+2023/02/02 17:32:38 Completed URLS: 236 | Goroutines: 570
+2023/02/02 17:32:38 Completed URLS: 246 | Goroutines: 730
+2023/02/02 17:32:38 Completed URLS: 246 | Goroutines: 816
+2023/02/02 17:32:38 Completed URLS: 247 | Goroutines: 813
+2023/02/02 17:32:38 Completed URLS: 246 | Goroutines: 815
+2023/02/02 17:32:38 Completed URLS: 252 | Goroutines: 791
+2023/02/02 17:32:38 Completed URLS: 253 | Goroutines: 789
+2023/02/02 17:32:38 Completed URLS: 256 | Goroutines: 771
+2023/02/02 17:32:38 Completed URLS: 263 | Goroutines: 744
+2023/02/02 17:32:38 Completed URLS: 264 | Goroutines: 741
+2023/02/02 17:32:38 Completed URLS: 264 | Goroutines: 720
+2023/02/02 17:32:38 Completed URLS: 264 | Goroutines: 741
+2023/02/02 17:32:38 Completed URLS: 281 | Goroutines: 1126
+2023/02/02 17:32:38 Completed URLS: 287 | Goroutines: 1417
+2023/02/02 17:32:39 Completed URLS: 298 | Goroutines: 1956
+2023/02/02 17:32:39 Completed URLS: 308 | Goroutines: 2645
+2023/02/02 17:32:39 Completed URLS: 332 | Goroutines: 3033
+2023/02/02 17:32:39 Completed URLS: 348 | Goroutines: 3847
+2023/02/02 17:32:39 Completed URLS: 354 | Goroutines: 4205
+2023/02/02 17:32:39 Completed URLS: 358 | Goroutines: 4277
+2023/02/02 17:32:39 Completed URLS: 374 | Goroutines: 4734
+2023/02/02 17:32:39 Completed URLS: 387 | Goroutines: 5595
+2023/02/02 17:32:39 Completed URLS: 390 | Goroutines: 5620
+2023/02/02 17:32:39 Completed URLS: 391 | Goroutines: 5648
+2023/02/02 17:32:39 Completed URLS: 391 | Goroutines: 5648
+2023/02/02 17:32:39 Completed URLS: 393 | Goroutines: 5683
+2023/02/02 17:32:39 Completed URLS: 396 | Goroutines: 5717
+2023/02/02 17:32:39 Completed URLS: 401 | Goroutines: 6255
+2023/02/02 17:32:39 Completed URLS: 402 | Goroutines: 6301
+2023/02/02 17:32:39 Completed URLS: 413 | Goroutines: 6653
+2023/02/02 17:32:39 Completed URLS: 417 | Goroutines: 6798
+2023/02/02 17:32:39 Get "https:&": http: no Host in request URL connection error
+2023/02/02 17:32:39 Completed URLS: 420 | Goroutines: 6887
+2023/02/02 17:32:39 Completed URLS: 436 | Goroutines: 8044
+2023/02/02 17:32:39 Completed URLS: 439 | Goroutines: 8136
+2023/02/02 17:32:39 Completed URLS: 453 | Goroutines: 8948
+2023/02/02 17:32:39 Completed URLS: 467 | Goroutines: 9874
+2023/02/02 17:32:39 Completed URLS: 480 | Goroutines: 10535
+2023/02/02 17:32:39 Completed URLS: 483 | Goroutines: 10749
+2023/02/02 17:32:39 Completed URLS: 484 | Goroutines: 10856
+2023/02/02 17:32:39 Completed URLS: 484 | Goroutines: 10856
+2023/02/02 17:32:39 Completed URLS: 487 | Goroutines: 11217
+2023/02/02 17:32:39 Completed URLS: 499 | Goroutines: 11679
+2023/02/02 17:32:39 Completed URLS: 519 | Goroutines: 12902
+2023/02/02 17:32:39 Completed URLS: 521 | Goroutines: 13137
+2023/02/02 17:32:39 Completed URLS: 523 | Goroutines: 13189
+2023/02/02 17:32:39 Completed URLS: 523 | Goroutines: 13189
+2023/02/02 17:32:39 Completed URLS: 539 | Goroutines: 14006
+2023/02/02 17:32:39 Completed URLS: 539 | Goroutines: 14006
+2023/02/02 17:32:39 Completed URLS: 549 | Goroutines: 14448
+2023/02/02 17:32:39 Completed URLS: 552 | Goroutines: 14721
+2023/02/02 17:32:39 Completed URLS: 556 | Goroutines: 14910
+2023/02/02 17:32:39 Completed URLS: 557 | Goroutines: 14959
+2023/02/02 17:32:39 Completed URLS: 557 | Goroutines: 14959
+2023/02/02 17:32:39 Completed URLS: 557 | Goroutines: 14959
+2023/02/02 17:32:39 Completed URLS: 558 | Goroutines: 14985
+2023/02/02 17:32:39 Get "https://Kyht.com": dial tcp: lookup Kyht.com: no such host connection error
+2023/02/02 17:32:39 Completed URLS: 560 | Goroutines: 15035
+2023/02/02 17:32:39 Completed URLS: 568 | Goroutines: 15911
+2023/02/02 17:32:39 Completed URLS: 576 | Goroutines: 16486
+2023/02/02 17:32:39 Completed URLS: 582 | Goroutines: 16784
+2023/02/02 17:32:39 Completed URLS: 584 | Goroutines: 17227
+2023/02/02 17:32:39 Completed URLS: 622 | Goroutines: 19422
+2023/02/02 17:32:39 parse "\u200b\u200bhttps://github.com/GetStream/webrtc-in-jetpack-compose/blob/main/webrtc-android/app/src/main/kotlin/io/getstream/webrtc/sample/compose/webrtc/utils/SDPUtils.kt": first path segment in URL cannot contain colon
+2023/02/02 17:32:39 Completed URLS: 640 | Goroutines: 20048
+2023/02/02 17:32:39 Completed URLS: 650 | Goroutines: 20813
+2023/02/02 17:32:39 Completed URLS: 659 | Goroutines: 21444
+2023/02/02 17:32:39 Completed URLS: 662 | Goroutines: 21583
+2023/02/02 17:32:39 Completed URLS: 665 | Goroutines: 21688
+2023/02/02 17:32:39 Completed URLS: 677 | Goroutines: 22133
+2023/02/02 17:32:39 Completed URLS: 677 | Goroutines: 22133
+2023/02/02 17:32:39 Completed URLS: 680 | Goroutines: 22250
+2023/02/02 17:32:39 Completed URLS: 702 | Goroutines: 23674
+2023/02/02 17:32:40 Completed URLS: 708 | Goroutines: 24182
+2023/02/02 17:32:40 Completed URLS: 716 | Goroutines: 24587
+2023/02/02 17:32:40 Completed URLS: 738 | Goroutines: 26087
+2023/02/02 17:32:40 Completed URLS: 760 | Goroutines: 27212
+2023/02/02 17:32:40 Completed URLS: 764 | Goroutines: 27461
+2023/02/02 17:32:40 Completed URLS: 766 | Goroutines: 27541
+2023/02/02 17:32:40 Completed URLS: 777 | Goroutines: 28134
+2023/02/02 17:32:40 Completed URLS: 782 | Goroutines: 28453
+2023/02/02 17:32:40 Completed URLS: 793 | Goroutines: 29179
+2023/02/02 17:32:40 Completed URLS: 796 | Goroutines: 29288
+2023/02/02 17:32:40 Completed URLS: 797 | Goroutines: 29346
+2023/02/02 17:32:40 Completed URLS: 813 | Goroutines: 30277
+2023/02/02 17:32:40 Completed URLS: 824 | Goroutines: 30957
+2023/02/02 17:32:40 Completed URLS: 828 | Goroutines: 31022
+2023/02/02 17:32:40 Completed URLS: 832 | Goroutines: 31218
+2023/02/02 17:32:40 Completed URLS: 850 | Goroutines: 32267
+2023/02/02 17:32:40 Completed URLS: 852 | Goroutines: 32345
+2023/02/02 17:32:40 Completed URLS: 854 | Goroutines: 32441
+2023/02/02 17:32:40 Completed URLS: 866 | Goroutines: 33359
+2023/02/02 17:32:40 Completed URLS: 866 | Goroutines: 33359
+2023/02/02 17:32:40 Completed URLS: 866 | Goroutines: 33359
+2023/02/02 17:32:40 Completed URLS: 866 | Goroutines: 33359
+2023/02/02 17:32:40 Completed URLS: 870 | Goroutines: 33802
+2023/02/02 17:32:40 Completed URLS: 872 | Goroutines: 34431
+2023/02/02 17:32:40 Completed URLS: 872 | Goroutines: 34431
+2023/02/02 17:32:40 Completed URLS: 874 | Goroutines: 34436
+2023/02/02 17:32:40 Completed URLS: 874 | Goroutines: 34435
+2023/02/02 17:32:40 Completed URLS: 874 | Goroutines: 34435
+2023/02/02 17:32:40 Completed URLS: 879 | Goroutines: 34537
+2023/02/02 17:32:40 Completed URLS: 880 | Goroutines: 34660
+2023/02/02 17:32:40 Completed URLS: 891 | Goroutines: 35320
+2023/02/02 17:32:40 Completed URLS: 901 | Goroutines: 36727
+2023/02/02 17:32:40 Completed URLS: 916 | Goroutines: 38268
+2023/02/02 17:32:40 Completed URLS: 916 | Goroutines: 38268
+2023/02/02 17:32:40 Completed URLS: 920 | Goroutines: 38502
+2023/02/02 17:32:40 Completed URLS: 921 | Goroutines: 38560
+2023/02/02 17:32:40 Completed URLS: 929 | Goroutines: 39015
+2023/02/02 17:32:40 Completed URLS: 941 | Goroutines: 39929
+2023/02/02 17:32:40 Completed URLS: 946 | Goroutines: 40118
+2023/02/02 17:32:40 Completed URLS: 975 | Goroutines: 42641
+2023/02/02 17:32:40 Completed URLS: 1000 | Goroutines: 44313
+2023/02/02 17:32:40 Completed URLS: 1019 | Goroutines: 45076
+2023/02/02 17:32:40 Get "https://www.getnewsmart.com/": dial tcp: lookup www.getnewsmart.com: no such host connection error
+2023/02/02 17:32:40 Completed URLS: 1101 | Goroutines: 53975
+2023/02/02 17:32:40 Completed URLS: 1101 | Goroutines: 53975
+2023/02/02 17:32:40 Completed URLS: 1103 | Goroutines: 53953
+2023/02/02 17:32:40 Completed URLS: 1103 | Goroutines: 53953
+2023/02/02 17:32:40 Completed URLS: 1103 | Goroutines: 53953
+2023/02/02 17:32:40 Completed URLS: 1105 | Goroutines: 53988
+2023/02/02 17:32:40 Completed URLS: 1105 | Goroutines: 53988
+2023/02/02 17:32:40 Completed URLS: 1105 | Goroutines: 53988
+2023/02/02 17:32:40 Completed URLS: 1105 | Goroutines: 53988
+2023/02/02 17:32:40 Completed URLS: 1111 | Goroutines: 54313
+2023/02/02 17:32:41 Completed URLS: 1121 | Goroutines: 54844
+2023/02/02 17:32:41 Completed URLS: 1134 | Goroutines: 55755
+2023/02/02 17:32:41 Completed URLS: 1148 | Goroutines: 56689
+2023/02/02 17:32:41 Completed URLS: 1158 | Goroutines: 57028
+2023/02/02 17:32:41 Completed URLS: 1186 | Goroutines: 58793
+2023/02/02 17:32:41 Completed URLS: 1193 | Goroutines: 58947
+2023/02/02 17:32:41 Completed URLS: 1201 | Goroutines: 59097
+2023/02/02 17:32:41 Completed URLS: 1202 | Goroutines: 59138
+2023/02/02 17:32:41 Completed URLS: 1206 | Goroutines: 59209
+2023/02/02 17:32:41 Completed URLS: 1210 | Goroutines: 59425
+2023/02/02 17:32:41 parse "https://images.dowjones.com/wp-content/uploads/sites/35/2021/08/09132246/Terms-and-Conditions-self-service.pdf\n": net/url: invalid control character in URL
+2023/02/02 17:32:41 parse "https://www.dowjones.com/privacy-notice/?mod=WSJ\n": net/url: invalid control character in URL
+2023/02/02 17:32:41 Completed URLS: 1217 | Goroutines: 59640
+2023/02/02 17:32:41 Completed URLS: 1217 | Goroutines: 59640
+2023/02/02 17:32:41 Completed URLS: 1219 | Goroutines: 59633
+2023/02/02 17:32:41 Completed URLS: 1219 | Goroutines: 59633
+2023/02/02 17:32:41 Completed URLS: 1219 | Goroutines: 59633
+2023/02/02 17:32:41 Completed URLS: 1227 | Goroutines: 60010
+2023/02/02 17:32:41 Completed URLS: 1228 | Goroutines: 60038
+2023/02/02 17:32:41 Completed URLS: 1229 | Goroutines: 60081
+2023/02/02 17:32:41 Completed URLS: 1240 | Goroutines: 60660
+2023/02/02 17:32:41 Completed URLS: 1257 | Goroutines: 61361
+2023/02/02 17:32:41 Completed URLS: 1266 | Goroutines: 61770
+2023/02/02 17:32:41 Completed URLS: 1272 | Goroutines: 62142
+2023/02/02 17:32:41 Completed URLS: 1274 | Goroutines: 62220
+2023/02/02 17:32:41 Completed URLS: 1279 | Goroutines: 62465
+2023/02/02 17:32:41 Completed URLS: 1280 | Goroutines: 62516
+2023/02/02 17:32:41 Completed URLS: 1291 | Goroutines: 63341
+2023/02/02 17:32:41 Completed URLS: 1292 | Goroutines: 63385
+2023/02/02 17:32:41 Completed URLS: 1306 | Goroutines: 64658
+2023/02/02 17:32:41 Completed URLS: 1308 | Goroutines: 64775
+2023/02/02 17:32:41 Completed URLS: 1308 | Goroutines: 64775
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64864
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64864
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64864
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64864
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64864
+2023/02/02 17:32:41 Completed URLS: 1310 | Goroutines: 64863
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1311 | Goroutines: 64793
+2023/02/02 17:32:41 Completed URLS: 1317 | Goroutines: 65333
+2023/02/02 17:32:41 Completed URLS: 1321 | Goroutines: 65431
+2023/02/02 17:32:41 Completed URLS: 1321 | Goroutines: 65431
+2023/02/02 17:32:41 Completed URLS: 1327 | Goroutines: 65574
+2023/02/02 17:32:41 Completed URLS: 1328 | Goroutines: 65602
+2023/02/02 17:32:41 Completed URLS: 1354 | Goroutines: 66660
+2023/02/02 17:32:41 Completed URLS: 1361 | Goroutines: 66913
+2023/02/02 17:32:41 Completed URLS: 1366 | Goroutines: 67384
+2023/02/02 17:32:41 Completed URLS: 1369 | Goroutines: 67960
+2023/02/02 17:32:41 Completed URLS: 1369 | Goroutines: 67960
+2023/02/02 17:32:41 Completed URLS: 1373 | Goroutines: 68435
+2023/02/02 17:32:41 Completed URLS: 1374 | Goroutines: 68473
+2023/02/02 17:32:41 Completed URLS: 1374 | Goroutines: 68473
+2023/02/02 17:32:41 Completed URLS: 1376 | Goroutines: 68544
+2023/02/02 17:32:41 Completed URLS: 1380 | Goroutines: 68800
+2023/02/02 17:32:41 Completed URLS: 1387 | Goroutines: 69406
+2023/02/02 17:32:41 Completed URLS: 1410 | Goroutines: 70665
+2023/02/02 17:32:41 Completed URLS: 1411 | Goroutines: 70722
+2023/02/02 17:32:41 Completed URLS: 1415 | Goroutines: 70942
+2023/02/02 17:32:41 Completed URLS: 1417 | Goroutines: 71094
+2023/02/02 17:32:41 Completed URLS: 1424 | Goroutines: 71707
+2023/02/02 17:32:41 Completed URLS: 1451 | Goroutines: 72740
+2023/02/02 17:32:41 Completed URLS: 1453 | Goroutines: 72811
+2023/02/02 17:32:41 Completed URLS: 1475 | Goroutines: 73850
+2023/02/02 17:32:41 Completed URLS: 1500 | Goroutines: 76005
+2023/02/02 17:32:42 Completed URLS: 1509 | Goroutines: 76548
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20140503013539/http://noticias.juridicas.com/articulos/00-Generalidades/200602-325612711062370.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20131029195622/http://noticias.uol.com.br/saude/ultimas-noticias/redacao/2012/09/25/vitimas-do-cesio-137-voltam-a-receber-remedios-e-pedem-assistencia-medica-para-todos.htm": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20181021024750/https://www.washingtonpost.com/opinions/time-to-better-secure-radioactive-materials/2012/03/23/gIQAn5deaS_story.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20190203171236/http://www.igr.com.br/paciente/instituto": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Get "https://appdb.winehq.org/": dial tcp: lookup appdb.winehq.org: no such host connection error
+2023/02/02 17:32:42 Get "https://buffett.cnbc.com": dial tcp: lookup buffett.cnbc.com: no such host connection error
+2023/02/02 17:32:42 Completed URLS: 1526 | Goroutines: 77324
+2023/02/02 17:32:42 Get "https://forums.winehq.org/": dial tcp: lookup forums.winehq.org: no such host connection error
+2023/02/02 17:32:42 parse "https://www.youvisit.com/#/vte/?data-platform=v&data-link-type=immersive&data-inst=60251&data-image-width=90%&data-image-height=300&": invalid URL escape "%&d"
+2023/02/02 17:32:42 Completed URLS: 1554 | Goroutines: 79753
+2023/02/02 17:32:42 Completed URLS: 1557 | Goroutines: 80092
+2023/02/02 17:32:42 Completed URLS: 1569 | Goroutines: 81391
+2023/02/02 17:32:42 Completed URLS: 1594 | Goroutines: 83491
+2023/02/02 17:32:42 Completed URLS: 1595 | Goroutines: 83467
+2023/02/02 17:32:42 Completed URLS: 1596 | Goroutines: 83544
+2023/02/02 17:32:42 Completed URLS: 1596 | Goroutines: 83544
+2023/02/02 17:32:42 Completed URLS: 1597 | Goroutines: 83620
+2023/02/02 17:32:42 Completed URLS: 1597 | Goroutines: 83620
+2023/02/02 17:32:42 Completed URLS: 1610 | Goroutines: 84416
+2023/02/02 17:32:42 Completed URLS: 1623 | Goroutines: 85506
+2023/02/02 17:32:42 Completed URLS: 1646 | Goroutines: 87620
+2023/02/02 17:32:42 Completed URLS: 1650 | Goroutines: 87615
+2023/02/02 17:32:42 Completed URLS: 1650 | Goroutines: 87615
+2023/02/02 17:32:42 Completed URLS: 1662 | Goroutines: 88182
+2023/02/02 17:32:42 Completed URLS: 1662 | Goroutines: 88182
+2023/02/02 17:32:42 Completed URLS: 1662 | Goroutines: 88182
+2023/02/02 17:32:42 Completed URLS: 1680 | Goroutines: 91723
+2023/02/02 17:32:42 Completed URLS: 1680 | Goroutines: 91722
+2023/02/02 17:32:42 Completed URLS: 1686 | Goroutines: 92219
+2023/02/02 17:32:42 Completed URLS: 1720 | Goroutines: 94526
+2023/02/02 17:32:42 Completed URLS: 1720 | Goroutines: 94526
+2023/02/02 17:32:42 Completed URLS: 1721 | Goroutines: 94489
+2023/02/02 17:32:42 Completed URLS: 1724 | Goroutines: 94657
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20150313154852/http://www.ti.com/tool/CC2650DK": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Get "https://web.archive.org/web/20080919000533/http://unikcctv.com/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:42 Completed URLS: 1736 | Goroutines: 95129
+2023/02/02 17:32:42 Completed URLS: 1740 | Goroutines: 95175
+2023/02/02 17:32:42 Completed URLS: 1742 | Goroutines: 95214
+2023/02/02 17:32:42 Completed URLS: 1775 | Goroutines: 96736
+2023/02/02 17:32:42 Completed URLS: 1783 | Goroutines: 97454
+2023/02/02 17:32:42 Completed URLS: 1785 | Goroutines: 97635
+2023/02/02 17:32:42 Completed URLS: 1808 | Goroutines: 99932
+2023/02/02 17:32:43 Completed URLS: 1813 | Goroutines: 100138
+2023/02/02 17:32:43 Completed URLS: 1814 | Goroutines: 100241
+2023/02/02 17:32:43 Completed URLS: 1815 | Goroutines: 100436
+2023/02/02 17:32:43 Completed URLS: 1815 | Goroutines: 100436
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20121016132835/http://articles.latimes.com/1987-10-24/news/mn-4108_1_radiation-poisoning": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20171203053037/http://content.time.com/time/photogallery/0,29307,1887705,00.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20160107120051/https://www.iaea.org/Publications/Magazines/Bulletin/Bull472/pdfs/srs_toolkit.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20170118130435/https://books.google.com/books": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20140222070245/http://noticias.terra.com.br/brasil/goiania-25-anos-depois-39perguntam-ate-se-brilhamos39-diz-vitima,bb12dc840f0da310VgnCLD200000bbcceb0aRCRD.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20170914222328/http://www.nytimes.com/2010/07/09/nyregion/09dirty.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20170114084537/https://books.google.com/books": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20160312190235/http://www-pub.iaea.org/MTCD/publications/PDF/Pub815_web.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 1829 | Goroutines: 100902
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20120813061419/http://www.uraniumfilmfestival.org/index.php/en/programme/directors-statements/257-roberto-pires": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 1831 | Goroutines: 100929
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20131101105329/http://carlalacerda.blogspot.co.uk/2010_07_01_archive.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 1832 | Goroutines: 100927
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20151225122908/http://arts.bev.net/roperldavid/GRI.htm": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20120318233148/http://www.oecd-nea.org/law/nlb/Nlb-66/023-032.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20180809051432/http://www.aintnowaytogo.com/glitter.htm": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20040309113338/http://www.jornalopcao.com.br/index.asp": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20080126080434/https://www.greenpeace.org.br/nuclear/cesio/flash_cesio.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20160107120050/http://users.physics.harvard.edu/~wilson/pmpmta/Goiana.doc": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20170118121011/https://books.google.com/books": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190901185223/https://www.youtube.com/watch": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 1841 | Goroutines: 100936
+2023/02/02 17:32:43 Completed URLS: 1843 | Goroutines: 100969
+2023/02/02 17:32:43 Completed URLS: 1843 | Goroutines: 100969
+2023/02/02 17:32:43 Completed URLS: 1846 | Goroutines: 101236
+2023/02/02 17:32:43 Get "https://www.ubicomp.org": dial tcp: lookup www.ubicomp.org: no such host connection error
+2023/02/02 17:32:43 Completed URLS: 1859 | Goroutines: 102128
+2023/02/02 17:32:43 Completed URLS: 1882 | Goroutines: 103598
+2023/02/02 17:32:43 Completed URLS: 1889 | Goroutines: 104304
+2023/02/02 17:32:43 Completed URLS: 1897 | Goroutines: 105131
+2023/02/02 17:32:43 Completed URLS: 1908 | Goroutines: 106245
+2023/02/02 17:32:43 Get "http://127.0.0.1:8000/items/5": dial tcp 127.0.0.1:8000: connect: connection refused connection error
+2023/02/02 17:32:43 Get "http://127.0.0.1:8000/docs": dial tcp 127.0.0.1:8000: connect: connection refused connection error
+2023/02/02 17:32:43 Get "http://127.0.0.1:8000/redoc": dial tcp 127.0.0.1:8000: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 1936 | Goroutines: 108025
+2023/02/02 17:32:43 Completed URLS: 1966 | Goroutines: 109741
+2023/02/02 17:32:43 Completed URLS: 1996 | Goroutines: 110288
+2023/02/02 17:32:43 Completed URLS: 2017 | Goroutines: 111493
+2023/02/02 17:32:43 Completed URLS: 2024 | Goroutines: 111940
+2023/02/02 17:32:43 Completed URLS: 2036 | Goroutines: 112911
+2023/02/02 17:32:43 Completed URLS: 2041 | Goroutines: 112969
+2023/02/02 17:32:43 Completed URLS: 2042 | Goroutines: 113004
+2023/02/02 17:32:43 Completed URLS: 2072 | Goroutines: 114691
+2023/02/02 17:32:43 Completed URLS: 2073 | Goroutines: 114692
+2023/02/02 17:32:43 Completed URLS: 2076 | Goroutines: 114769
+2023/02/02 17:32:43 Get "http://unixtime.info/facts.html": dial tcp: lookup unixtime.info: no such host connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20221018104746/https://books.google.com/books": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 2082 | Goroutines: 114875
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20120515005611/http://www.eecis.udel.edu/~mills/leap.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20120513133703/http://www.idrbt.ac.in/publications/workingpapers/Working%20Paper%20No.%209.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20221018104826/https://www.unixtimestamp.com/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20220911005342/https://www.wired.com/2001/09/unix-tick-tocks-to-a-billion/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190619122211/https://docs.microsoft.com/en-us/stream-analytics-query/timestamp-by-azure-stream-analytics": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20171115154605/http://pubs.opengroup.org/onlinepubs/9699919799/xrat/V4_xbd_chap04.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190810060411/https://queue.acm.org/detail.cfm": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190619123054/https://www-01.ibm.com/support/docview.wss": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20161114122531/http://www.thetimes.co.uk/tto/technology/article1859315.ece": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20220722022415/https://docs.python.org/3/library/time.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20200112103648/https://www.epochconverter.com/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20171222113543/http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190619115302/https://support.apple.com/guide/shortcuts/format-date-timestamps-apdfb33b0e17/ios": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20200926224028/https://www.cl.cam.ac.uk/~mgk25/time/c/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190627152007/http://man7.org/linux/man-pages/man0/time.h.0p.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20200112103650/https://slashdot.org/story/05/03/17/169200/date-s-turning-1111111111": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20220305094724/https://www.bell-labs.com/usr/dmr/www/pdfs/man22.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Completed URLS: 2110 | Goroutines: 115105
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190810060329/https://netbsd.gw.com/cgi-bin/man-cgi": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20171016230241/http://www.iana.org/time-zones/repository/tz-link.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20200112103701/https://support.ntp.org/bin/view/Support/TimeScales": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20171027205157/http://unixtime.info/facts.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20140329022430/http://www.wired.com/gadgetlab/2009/02/unix-lovers-to/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20190330170620/https://books.google.com/books": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20151022025543/http://catless.ncl.ac.uk/Risks/21.69.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20121011065555/http://linuxmafia.com/wpfaq/problems.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Get "https://web.archive.org/web/20130111012013/http://www.google.com/logos/unix1234567890.gif": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:43 Completed URLS: 2150 | Goroutines: 115935
+2023/02/02 17:32:43 Completed URLS: 2159 | Goroutines: 116495
+2023/02/02 17:32:43 Completed URLS: 2168 | Goroutines: 116940
+2023/02/02 17:32:43 Completed URLS: 2189 | Goroutines: 118122
+2023/02/02 17:32:43 Completed URLS: 2191 | Goroutines: 118125
+2023/02/02 17:32:43 Completed URLS: 2192 | Goroutines: 118126
+2023/02/02 17:32:43 Completed URLS: 2193 | Goroutines: 118103
+2023/02/02 17:32:43 Completed URLS: 2193 | Goroutines: 118098
+2023/02/02 17:32:43 Completed URLS: 2193 | Goroutines: 118098
+2023/02/02 17:32:43 Completed URLS: 2207 | Goroutines: 118485
+2023/02/02 17:32:43 Get "https://netbsd.gw.com/cgi-bin/man-cgi": dial tcp: lookup netbsd.gw.com: no such host connection error
+2023/02/02 17:32:43 Completed URLS: 2226 | Goroutines: 119190
+2023/02/02 17:32:43 Completed URLS: 2231 | Goroutines: 119344
+2023/02/02 17:32:44 Completed URLS: 2271 | Goroutines: 120847
+2023/02/02 17:32:44 Completed URLS: 2278 | Goroutines: 121225
+2023/02/02 17:32:44 Completed URLS: 2297 | Goroutines: 123321
+2023/02/02 17:32:44 Completed URLS: 2299 | Goroutines: 123379
+2023/02/02 17:32:44 Completed URLS: 2300 | Goroutines: 123387
+2023/02/02 17:32:44 Completed URLS: 2303 | Goroutines: 123411
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20200102175251/http://www.cs.technion.ac.il/~gabr/papers/homograph_full.pdf": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20050320020225/http://www.shmoo.com/idn/": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20150907200124/http://cira.ca/news/ca-takes-french-accent": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20110405021458/http://www.kboi2.com/news/local/119020194.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Completed URLS: 2326 | Goroutines: 124619
+2023/02/02 17:32:44 Completed URLS: 2328 | Goroutines: 124724
+2023/02/02 17:32:44 Completed URLS: 2337 | Goroutines: 125085
+2023/02/02 17:32:44 Completed URLS: 2337 | Goroutines: 125085
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20120315224532/http://www.ktvb.com/news/business/Boise-TV-news-website-targeted-with-Justin-Bieber-prank-119026184.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Completed URLS: 2359 | Goroutines: 125982
+2023/02/02 17:32:44 Completed URLS: 2375 | Goroutines: 126429
+2023/02/02 17:32:44 Completed URLS: 2380 | Goroutines: 126674
+2023/02/02 17:32:44 Completed URLS: 2387 | Goroutines: 126877
+2023/02/02 17:32:44 Completed URLS: 2397 | Goroutines: 127060
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20141017110723/https://www.icann.org/resources/pages/string-evaluation-completion-2014-02-19-en": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Get "https://web.archive.org/web/20201209181122/https://www.soluble.ai/blog/public-disclosure-emoji-to-zero-day": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:44 Get "https://www.soluble.ai/blog/public-disclosure-emoji-to-zero-day": remote error: tls: handshake failure connection error
+2023/02/02 17:32:44 Completed URLS: 2413 | Goroutines: 130005
+2023/02/02 17:32:44 Completed URLS: 2416 | Goroutines: 130085
+2023/02/02 17:32:44 Completed URLS: 2453 | Goroutines: 131839
+2023/02/02 17:32:44 parse "http://' + FilteredHostString +'": invalid character " " in host name
+2023/02/02 17:32:44 parse "http://www.irongeek.com/i.php?page=security/homoglyph-attack-proje \nct": net/url: invalid control character in URL
+2023/02/02 17:32:44 Completed URLS: 2491 | Goroutines: 133975
+2023/02/02 17:32:44 Completed URLS: 2494 | Goroutines: 134348
+2023/02/02 17:32:44 Completed URLS: 2509 | Goroutines: 134534
+2023/02/02 17:32:44 parse "' + events[evnt].url\r\n            else\r\n               htmlstring += '<li><a href=": net/url: invalid control character in URL
+2023/02/02 17:32:44 parse "#0%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#5%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#10%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#15%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#20%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#25%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#30%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#35%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#40%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#45%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#50%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#55%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#60%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#65%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#70%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#75%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#80%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#85%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#90%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#95%": invalid URL escape "%"
+2023/02/02 17:32:44 parse "#100%": invalid URL escape "%"
+2023/02/02 17:32:44 Completed URLS: 2552 | Goroutines: 137979
+2023/02/02 17:32:44 Completed URLS: 2567 | Goroutines: 138724
+2023/02/02 17:32:44 Completed URLS: 2575 | Goroutines: 139420
+2023/02/02 17:32:45 Completed URLS: 2592 | Goroutines: 141042
+2023/02/02 17:32:45 parse "' + events[evnt].url\r\n            else\r\n               htmlstring += '<li><a href=": net/url: invalid control character in URL
+2023/02/02 17:32:45 Completed URLS: 2618 | Goroutines: 143069
+2023/02/02 17:32:45 Completed URLS: 2620 | Goroutines: 143244
+2023/02/02 17:32:45 Completed URLS: 2626 | Goroutines: 143580
+2023/02/02 17:32:45 Completed URLS: 2630 | Goroutines: 143824
+2023/02/02 17:32:45 Completed URLS: 2632 | Goroutines: 143934
+2023/02/02 17:32:45 Completed URLS: 2648 | Goroutines: 145140
+2023/02/02 17:32:45 Completed URLS: 2648 | Goroutines: 145087
+2023/02/02 17:32:45 Completed URLS: 2648 | Goroutines: 145084
+2023/02/02 17:32:45 Completed URLS: 2648 | Goroutines: 145080
+2023/02/02 17:32:45 Completed URLS: 2651 | Goroutines: 145245
+2023/02/02 17:32:45 Completed URLS: 2658 | Goroutines: 146539
+2023/02/02 17:32:46 Completed URLS: 2682 | Goroutines: 148096
+2023/02/02 17:32:46 Completed URLS: 2687 | Goroutines: 149087
+2023/02/02 17:32:46 Completed URLS: 2687 | Goroutines: 149081
+2023/02/02 17:32:46 Completed URLS: 2688 | Goroutines: 149062
+2023/02/02 17:32:46 Completed URLS: 2688 | Goroutines: 149050
+2023/02/02 17:32:46 Completed URLS: 2688 | Goroutines: 149034
+2023/02/02 17:32:46 Completed URLS: 2709 | Goroutines: 151381
+2023/02/02 17:32:46 Completed URLS: 2715 | Goroutines: 151729
+2023/02/02 17:32:46 Completed URLS: 2715 | Goroutines: 151716
+2023/02/02 17:32:47 Completed URLS: 2763 | Goroutines: 160424
+2023/02/02 17:32:47 Completed URLS: 2776 | Goroutines: 163465
+2023/02/02 17:32:47 Completed URLS: 2782 | Goroutines: 164372
+2023/02/02 17:32:47 Completed URLS: 2786 | Goroutines: 164385
+2023/02/02 17:32:47 parse "#0%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#5%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#10%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#15%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#20%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#25%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#30%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#35%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#40%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#45%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#50%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#55%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#60%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#65%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#70%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#75%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#80%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#85%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#90%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#95%": invalid URL escape "%"
+2023/02/02 17:32:47 parse "#100%": invalid URL escape "%"
+2023/02/02 17:32:47 Completed URLS: 2828 | Goroutines: 170056
+2023/02/02 17:32:47 Completed URLS: 2828 | Goroutines: 170056
+2023/02/02 17:32:47 Completed URLS: 2831 | Goroutines: 170127
+2023/02/02 17:32:47 Completed URLS: 2832 | Goroutines: 170276
+2023/02/02 17:32:47 Completed URLS: 2834 | Goroutines: 170523
+2023/02/02 17:32:47 Completed URLS: 2838 | Goroutines: 171529
+2023/02/02 17:32:47 Completed URLS: 2838 | Goroutines: 171461
+2023/02/02 17:32:47 Completed URLS: 2842 | Goroutines: 172348
+2023/02/02 17:32:47 Completed URLS: 2850 | Goroutines: 172834
+2023/02/02 17:32:47 Completed URLS: 2857 | Goroutines: 173110
+2023/02/02 17:32:47 Completed URLS: 2876 | Goroutines: 174156
+2023/02/02 17:32:47 Completed URLS: 2898 | Goroutines: 179240
+2023/02/02 17:32:47 Completed URLS: 2906 | Goroutines: 182125
+2023/02/02 17:32:47 Completed URLS: 2907 | Goroutines: 182129
+2023/02/02 17:32:48 Completed URLS: 2923 | Goroutines: 185281
+2023/02/02 17:32:48 Completed URLS: 2929 | Goroutines: 185953
+2023/02/02 17:32:48 Completed URLS: 2941 | Goroutines: 187703
+2023/02/02 17:32:48 Completed URLS: 2983 | Goroutines: 199534
+2023/02/02 17:32:48 Completed URLS: 2995 | Goroutines: 202367
+2023/02/02 17:32:48 Completed URLS: 3010 | Goroutines: 207756
+2023/02/02 17:32:48 Completed URLS: 3015 | Goroutines: 208501
+2023/02/02 17:32:48 Completed URLS: 3061 | Goroutines: 221833
+2023/02/02 17:32:49 Completed URLS: 3074 | Goroutines: 226414
+2023/02/02 17:32:49 Completed URLS: 3089 | Goroutines: 232253
+2023/02/02 17:32:49 Completed URLS: 3090 | Goroutines: 233001
+2023/02/02 17:32:49 Completed URLS: 3120 | Goroutines: 248928
+2023/02/02 17:32:49 Completed URLS: 3127 | Goroutines: 251725
+2023/02/02 17:32:49 Completed URLS: 3134 | Goroutines: 255523
+2023/02/02 17:32:49 Completed URLS: 3142 | Goroutines: 258190
+2023/02/02 17:32:49 Completed URLS: 3142 | Goroutines: 258190
+2023/02/02 17:32:49 Completed URLS: 3144 | Goroutines: 259395
+2023/02/02 17:32:49 Completed URLS: 3153 | Goroutines: 262546
+2023/02/02 17:32:49 Completed URLS: 3158 | Goroutines: 263153
+2023/02/02 17:32:49 Completed URLS: 3164 | Goroutines: 263325
+2023/02/02 17:32:49 Get "http://127.0.0.1:8080": dial tcp 127.0.0.1:8080: connect: connection refused connection error
+2023/02/02 17:32:49 Completed URLS: 3184 | Goroutines: 267209
+2023/02/02 17:32:49 Completed URLS: 3192 | Goroutines: 269098
+2023/02/02 17:32:50 Completed URLS: 3214 | Goroutines: 275690
+2023/02/02 17:32:50 Completed URLS: 3218 | Goroutines: 276649
+2023/02/02 17:32:50 parse "#cite_note-Saudi_Arabia&#39;s_wealth_fund_raises_Nintendo_stake_to_6%-1": invalid URL escape "%-1"
+2023/02/02 17:32:50 parse "#cite_note-Saudi_Arabia&#39;s_wealth_fund_takes_5%_Nintendo_stake-211": invalid URL escape "%_N"
+2023/02/02 17:32:50 parse "#cite_note-Saudi_Arabia&#39;s_wealth_fund_raises_Nintendo_stake_to_6%-1": invalid URL escape "%-1"
+2023/02/02 17:32:50 parse "#cite_ref-Saudi_Arabia&#39;s_wealth_fund_takes_5%_Nintendo_stake_211-0": invalid URL escape "%_N"
+2023/02/02 17:32:50 Completed URLS: 3229 | Goroutines: 285193
+2023/02/02 17:32:50 Completed URLS: 3235 | Goroutines: 289953
+2023/02/02 17:32:50 Completed URLS: 3259 | Goroutines: 310042
+2023/02/02 17:32:50 Completed URLS: 3259 | Goroutines: 310042
+2023/02/02 17:32:50 Completed URLS: 3269 | Goroutines: 313935
+2023/02/02 17:32:50 Completed URLS: 3273 | Goroutines: 315604
+2023/02/02 17:32:50 Completed URLS: 3284 | Goroutines: 318035
+2023/02/02 17:32:50 Completed URLS: 3287 | Goroutines: 320116
+2023/02/02 17:32:50 Completed URLS: 3289 | Goroutines: 320289
+2023/02/02 17:32:50 Completed URLS: 3304 | Goroutines: 326414
+2023/02/02 17:32:51 Completed URLS: 3322 | Goroutines: 336421
+2023/02/02 17:32:51 Completed URLS: 3345 | Goroutines: 343007
+2023/02/02 17:32:51 Completed URLS: 3356 | Goroutines: 347705
+2023/02/02 17:32:51 Completed URLS: 3361 | Goroutines: 349352
+2023/02/02 17:32:51 Completed URLS: 3367 | Goroutines: 352547
+2023/02/02 17:32:51 Completed URLS: 3369 | Goroutines: 353455
+2023/02/02 17:32:51 Completed URLS: 3369 | Goroutines: 353455
+2023/02/02 17:32:51 Completed URLS: 3370 | Goroutines: 354031
+2023/02/02 17:32:51 Completed URLS: 3370 | Goroutines: 354031
+2023/02/02 17:32:51 Completed URLS: 3393 | Goroutines: 358540
+2023/02/02 17:32:51 Completed URLS: 3393 | Goroutines: 358559
+2023/02/02 17:32:51 Completed URLS: 3393 | Goroutines: 358572
+2023/02/02 17:32:51 Completed URLS: 3393 | Goroutines: 358620
+2023/02/02 17:32:51 Completed URLS: 3399 | Goroutines: 359124
+2023/02/02 17:32:51 Completed URLS: 3401 | Goroutines: 360056
+2023/02/02 17:32:51 Completed URLS: 3401 | Goroutines: 360056
+2023/02/02 17:32:51 Completed URLS: 3401 | Goroutines: 360056
+2023/02/02 17:32:51 Completed URLS: 3401 | Goroutines: 360056
+2023/02/02 17:32:51 Completed URLS: 3401 | Goroutines: 360056
+2023/02/02 17:32:51 Completed URLS: 3407 | Goroutines: 360057
+2023/02/02 17:32:51 Completed URLS: 3425 | Goroutines: 362398
+2023/02/02 17:32:51 Completed URLS: 3436 | Goroutines: 364632
+2023/02/02 17:32:51 Completed URLS: 3439 | Goroutines: 365933
+2023/02/02 17:32:51 Completed URLS: 3447 | Goroutines: 366584
+2023/02/02 17:32:51 Completed URLS: 3452 | Goroutines: 369602
+2023/02/02 17:32:51 Completed URLS: 3466 | Goroutines: 372936
+2023/02/02 17:32:51 Completed URLS: 3475 | Goroutines: 377188
+2023/02/02 17:32:51 Completed URLS: 3478 | Goroutines: 377644
+2023/02/02 17:32:51 Completed URLS: 3482 | Goroutines: 379192
+2023/02/02 17:32:51 Completed URLS: 3486 | Goroutines: 380028
+2023/02/02 17:32:51 Completed URLS: 3493 | Goroutines: 381750
+2023/02/02 17:32:51 Completed URLS: 3499 | Goroutines: 381893
+2023/02/02 17:32:51 Completed URLS: 3504 | Goroutines: 382250
+2023/02/02 17:32:51 Completed URLS: 3518 | Goroutines: 382963
+2023/02/02 17:32:51 Completed URLS: 3525 | Goroutines: 383240
+2023/02/02 17:32:51 Completed URLS: 3530 | Goroutines: 383802
+2023/02/02 17:32:51 Get "https://web.archive.org/web/20131205090234/http://travel2.nytimes.com/2005/11/20/travel/20T-PUEBLA.html": dial tcp 207.241.237.3:443: connect: connection refused connection error
+2023/02/02 17:32:51 Completed URLS: 3551 | Goroutines: 385569
+2023/02/02 17:32:51 Completed URLS: 3576 | Goroutines: 389830
+2023/02/02 17:32:51 Completed URLS: 3582 | Goroutines: 390554
+2023/02/02 17:32:52 Completed URLS: 3636 | Goroutines: 396323
+2023/02/02 17:32:52 Completed URLS: 3648 | Goroutines: 397611
+2023/02/02 17:32:52 parse "\n  https://131002.net/papers.html": net/url: invalid control character in URL
+2023/02/02 17:32:52 Completed URLS: 3654 | Goroutines: 398250
+2023/02/02 17:32:52 Get "http://hg.logilab.org/master/hgview/file/fe00511ad0ad/MANIFEST.in": dial tcp: lookup hg.logilab.org: no such host connection error
+2023/02/02 17:32:52 Completed URLS: 3655 | Goroutines: 398246
+2023/02/02 17:32:52 Completed URLS: 3664 | Goroutines: 399022
+2023/02/02 17:32:52 Completed URLS: 3689 | Goroutines: 405173
+2023/02/02 17:32:52 Completed URLS: 3691 | Goroutines: 405253
+2023/02/02 17:32:52 Completed URLS: 3715 | Goroutines: 409204
+2023/02/02 17:32:52 Completed URLS: 3721 | Goroutines: 409571
+2023/02/02 17:32:52 Completed URLS: 3727 | Goroutines: 410262
+2023/02/02 17:32:53 Completed URLS: 3746 | Goroutines: 414508
+2023/02/02 17:32:53 Completed URLS: 3747 | Goroutines: 414919
+2023/02/02 17:32:53 Completed URLS: 3748 | Goroutines: 414985
+2023/02/02 17:32:53 Completed URLS: 3748 | Goroutines: 414985
+2023/02/02 17:32:53 Completed URLS: 3748 | Goroutines: 414985
+2023/02/02 17:32:53 Completed URLS: 3721 | Goroutines: 409420
+2023/02/02 17:32:53 Completed URLS: 3763 | Goroutines: 419403
+2023/02/02 17:32:53 Completed URLS: 3764 | Goroutines: 419546
+2023/02/02 17:32:53 Completed URLS: 3766 | Goroutines: 419634
+2023/02/02 17:32:53 Completed URLS: 3790 | Goroutines: 421547
+2023/02/02 17:32:53 Completed URLS: 3793 | Goroutines: 421660
+2023/02/02 17:32:53 Completed URLS: 3794 | Goroutines: 421666
+2023/02/02 17:32:53 Completed URLS: 3799 | Goroutines: 421818
+2023/02/02 17:32:53 Completed URLS: 3805 | Goroutines: 426852
+2023/02/02 17:32:53 Completed URLS: 3806 | Goroutines: 427237
+2023/02/02 17:32:53 Completed URLS: 3822 | Goroutines: 427966
+2023/02/02 17:32:53 Completed URLS: 3826 | Goroutines: 428317
+2023/02/02 17:32:53 Completed URLS: 3832 | Goroutines: 428809
+2023/02/02 17:32:53 Completed URLS: 3855 | Goroutines: 431597
+2023/02/02 17:32:53 Completed URLS: 3859 | Goroutines: 431684
+2023/02/02 17:32:53 Completed URLS: 3859 | Goroutines: 431684
+2023/02/02 17:32:53 Get "https://starcity.com": dial tcp: lookup starcity.com: no such host connection error
+2023/02/02 17:32:53 Get "http://www.shophush.com": dial tcp: lookup www.shophush.com: no such host connection error
+2023/02/02 17:32:53 Completed URLS: 3881 | Goroutines: 433032
+2023/02/02 17:32:53 Completed URLS: 3890 | Goroutines: 433843
+2023/02/02 17:32:53 Get "https://isomorf.io/": x509: “isomorf.io” certificate is expired connection error
+2023/02/02 17:32:53 Completed URLS: 3899 | Goroutines: 434109
+2023/02/02 17:32:53 Completed URLS: 3899 | Goroutines: 434109
+2023/02/02 17:32:54 parse "http://| Link text:&lt;br&gt;eSignature APIs | https://www.hellosign.com/products/api": invalid character "|" in host name
+2023/02/02 17:32:54 Completed URLS: 3905 | Goroutines: 434531
+2023/02/02 17:32:54 Completed URLS: 3923 | Goroutines: 436540
+2023/02/02 17:32:54 Completed URLS: 3926 | Goroutines: 436798
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437100
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437100
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437100
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437119
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437119
+2023/02/02 17:32:54 Completed URLS: 3930 | Goroutines: 437119
+2023/02/02 17:32:54 Completed URLS: 3932 | Goroutines: 437579
+2023/02/02 17:32:54 Completed URLS: 3932 | Goroutines: 437589
+2023/02/02 17:32:54 Completed URLS: 3940 | Goroutines: 437558
+2023/02/02 17:32:54 Completed URLS: 3940 | Goroutines: 437557
+2023/02/02 17:32:54 Completed URLS: 3942 | Goroutines: 437604
+2023/02/02 17:32:54 Completed URLS: 3942 | Goroutines: 437602
+2023/02/02 17:32:54 Completed URLS: 3942 | Goroutines: 437602
+2023/02/02 17:32:54 Completed URLS: 3945 | Goroutines: 437904
+2023/02/02 17:32:54 Completed URLS: 3947 | Goroutines: 437959
+2023/02/02 17:32:54 Completed URLS: 3951 | Goroutines: 438023
+2023/02/02 17:32:54 Completed URLS: 3952 | Goroutines: 438125
+2023/02/02 17:32:54 Completed URLS: 3952 | Goroutines: 438125
+2023/02/02 17:32:54 Completed URLS: 3952 | Goroutines: 438125
+2023/02/02 17:32:54 Completed URLS: 3952 | Goroutines: 438125
+2023/02/02 17:32:54 Completed URLS: 3955 | Goroutines: 438302
+2023/02/02 17:32:54 Completed URLS: 3956 | Goroutines: 438308
+2023/02/02 17:32:54 Completed URLS: 3956 | Goroutines: 438308
+2023/02/02 17:32:54 Completed URLS: 3961 | Goroutines: 438682
+2023/02/02 17:32:54 Completed URLS: 3961 | Goroutines: 438682
+2023/02/02 17:32:54 Completed URLS: 3962 | Goroutines: 439073
+2023/02/02 17:32:54 Completed URLS: 3963 | Goroutines: 439162
+2023/02/02 17:32:54 Completed URLS: 3967 | Goroutines: 439343
+2023/02/02 17:32:54 Completed URLS: 3967 | Goroutines: 439343
+2023/02/02 17:32:54 Completed URLS: 3983 | Goroutines: 440402
+2023/02/02 17:32:54 Completed URLS: 3992 | Goroutines: 440669
+2023/02/02 17:32:54 Completed URLS: 3992 | Goroutines: 440669
+2023/02/02 17:32:54 Completed URLS: 4004 | Goroutines: 441277
+2023/02/02 17:32:54 Completed URLS: 4016 | Goroutines: 441880
+2023/02/02 17:32:54 Completed URLS: 4038 | Goroutines: 444409
+2023/02/02 17:32:55 Completed URLS: 4043 | Goroutines: 444749
+2023/02/02 17:32:55 Completed URLS: 4049 | Goroutines: 445175
+2023/02/02 17:32:55 Completed URLS: 4054 | Goroutines: 445371
+2023/02/02 17:32:55 Completed URLS: 4057 | Goroutines: 445621
+2023/02/02 17:32:55 Completed URLS: 4076 | Goroutines: 446096
+2023/02/02 17:32:56 Completed URLS: 4098 | Goroutines: 446594
+2023/02/02 17:32:56 Completed URLS: 4129 | Goroutines: 447479
+2023/02/02 17:32:56 Completed URLS: 4145 | Goroutines: 448567
+2023/02/02 17:32:56 Completed URLS: 4145 | Goroutines: 448567
+2023/02/02 17:32:56 Completed URLS: 4146 | Goroutines: 448620
+2023/02/02 17:32:56 Completed URLS: 4147 | Goroutines: 448717
+2023/02/02 17:32:56 Completed URLS: 4147 | Goroutines: 448717
+2023/02/02 17:32:56 Completed URLS: 4150 | Goroutines: 448902
+2023/02/02 17:32:56 Completed URLS: 4174 | Goroutines: 451500
+2023/02/02 17:32:56 Completed URLS: 4192 | Goroutines: 452445
+2023/02/02 17:32:56 parse "#%PATH%": invalid URL escape "%PA"
+2023/02/02 17:32:56 parse "#%$DIR%": invalid URL escape "%$D"
+2023/02/02 17:32:56 parse "#%LOGIN_NAME%": invalid URL escape "%LO"
+2023/02/02 17:32:56 parse "#%YESCHAR%": invalid URL escape "%YE"
+2023/02/02 17:32:56 parse "#%/%": invalid URL escape "%/%"
+2023/02/02 17:32:56 parse "#%OS_VERSION%": invalid URL escape "%OS"
+2023/02/02 17:32:56 parse "#%NOCHAR%": invalid URL escape "%NO"
+2023/02/02 17:32:56 parse "#%DIRCMD%": invalid URL escape "%DI"
+2023/02/02 17:32:56 parse "#%$WIDTH%": invalid URL escape "%$W"
+2023/02/02 17:32:56 parse "#%DIRSIZE%": invalid URL escape "%DI"
+2023/02/02 17:32:56 parse "#%_ROWS%": invalid URL escape "%_R"
+2023/02/02 17:32:56 parse "#%$LENGTH%": invalid URL escape "%$L"
+2023/02/02 17:32:56 parse "#%DIRSIZE%": invalid URL escape "%DI"
+2023/02/02 17:32:56 parse "#%_COLUMNS%": invalid URL escape "%_C"
+2023/02/02 17:32:56 parse "#%$CLS%": invalid URL escape "%$C"
+2023/02/02 17:32:56 parse "#%$OFF%": invalid URL escape "%$O"
+2023/02/02 17:32:56 parse "#%$CLS%": invalid URL escape "%$C"
+2023/02/02 17:32:56 parse "#%$ON%": invalid URL escape "%$O"
+2023/02/02 17:32:56 parse "#%$CLS%": invalid URL escape "%$C"
+2023/02/02 17:32:56 parse "#%$FOOTER%": invalid URL escape "%$F"
+2023/02/02 17:32:56 parse "#%$CLS%": invalid URL escape "%$C"
+2023/02/02 17:32:56 parse "#%$HEADER%": invalid URL escape "%$H"
+2023/02/02 17:32:56 parse "#%$LENGTH%": invalid URL escape "%$L"
+2023/02/02 17:32:56 parse "#%$WIDTH%": invalid URL escape "%$W"
+2023/02/02 17:32:56 parse "#%OS%": invalid URL escape "%OS"
+2023/02/02 17:32:56 Completed URLS: 4200 | Goroutines: 452665
+2023/02/02 17:32:56 parse "#%_SECOND%": invalid URL escape "%_S"
+2023/02/02 17:32:56 parse "#%OS_VERSION%": invalid URL escape "%OS"
+2023/02/02 17:32:56 parse "#%_DAY%": invalid URL escape "%_D"
+2023/02/02 17:32:56 parse "#%ERRORLEVEL%": invalid URL escape "%ER"
+2023/02/02 17:32:56 parse "#%_HOUR%": invalid URL escape "%_H"
+2023/02/02 17:32:56 parse "#%_MINUTE%": invalid URL escape "%_M"
+2023/02/02 17:32:56 parse "#%_MONTH%": invalid URL escape "%_M"
+2023/02/02 17:32:56 parse "#%VER%": invalid URL escape "%VE"
+2023/02/02 17:32:56 parse "#%_SECOND%": invalid URL escape "%_S"
+2023/02/02 17:32:56 parse "#%SWITCHAR%": invalid URL escape "%SW"
+2023/02/02 17:32:56 parse "#%$WIDTH%": invalid URL escape "%$W"
+2023/02/02 17:32:56 parse "#DAY%": invalid URL escape "%"
+2023/02/02 17:32:56 parse "#%HOUR24%": invalid URL escape "%HO"
+2023/02/02 17:32:56 parse "#%MINUTE%": invalid URL escape "%MI"
+2023/02/02 17:32:56 parse "#%MONTH%": invalid URL escape "%MO"
+2023/02/02 17:32:56 parse "#%$LENGTH%": invalid URL escape "%$L"
+2023/02/02 17:32:56 parse "#%SECOND%": invalid URL escape "%SE"
+2023/02/02 17:32:56 parse "#%LOGINNAME%": invalid URL escape "%LO"
+2023/02/02 17:32:56 parse "#%LOGIN_NAME%": invalid URL escape "%LO"
+2023/02/02 17:32:56 parse "#%ERRORLEVEL%": invalid URL escape "%ER"
+2023/02/02 17:32:56 Completed URLS: 4210 | Goroutines: 453740
+2023/02/02 17:32:56 Completed URLS: 4210 | Goroutines: 453739
+2023/02/02 17:32:56 Completed URLS: 4210 | Goroutines: 453739
+2023/02/02 17:32:56 Completed URLS: 4210 | Goroutines: 453739
+2023/02/02 17:32:56 Completed URLS: 4210 | Goroutines: 453739
+2023/02/02 17:32:56 Completed URLS: 4213 | Goroutines: 453905
+2023/02/02 17:32:56 Completed URLS: 4214 | Goroutines: 453996
+2023/02/02 17:32:56 Completed URLS: 4216 | Goroutines: 454058
+2023/02/02 17:32:56 Completed URLS: 4216 | Goroutines: 454058
+2023/02/02 17:32:56 Completed URLS: 4216 | Goroutines: 454058
+2023/02/02 17:32:56 Completed URLS: 4216 | Goroutines: 454058
+2023/02/02 17:32:56 Get "http://git.661346.n2.nabble.com/weaning-distributions-off-tarballs-extended-verification-of-git-tags-td7626117.html": dial tcp: lookup git.661346.n2.nabble.com: no such host connection error
+2023/02/02 17:32:56 Completed URLS: 4227 | Goroutines: 456010
+2023/02/02 17:32:56 Completed URLS: 4227 | Goroutines: 456010
+2023/02/02 17:32:56 Completed URLS: 4228 | Goroutines: 456046
+2023/02/02 17:32:56 Completed URLS: 4230 | Goroutines: 456143
+2023/02/02 17:32:56 Completed URLS: 4238 | Goroutines: 456344
+2023/02/02 17:32:56 Completed URLS: 4265 | Goroutines: 458004
+2023/02/02 17:32:56 Completed URLS: 4292 | Goroutines: 459402
+2023/02/02 17:32:56 Completed URLS: 4312 | Goroutines: 460635
+2023/02/02 17:32:56 Completed URLS: 4320 | Goroutines: 460984
+2023/02/02 17:32:57 Completed URLS: 4372 | Goroutines: 467107
+2023/02/02 17:32:57 Completed URLS: 4407 | Goroutines: 470414
+2023/02/02 17:32:57 Completed URLS: 4450 | Goroutines: 472420
+2023/02/02 17:32:57 Completed URLS: 4453 | Goroutines: 472430
+2023/02/02 17:32:57 Completed URLS: 4454 | Goroutines: 472434
+2023/02/02 17:32:57 Completed URLS: 4472 | Goroutines: 473068
+2023/02/02 17:32:57 Completed URLS: 4477 | Goroutines: 473232
